@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 namespace nopCommerceWebApiClient.Objects.Address
 {
     /// <summary>
-    /// CreateAddressDto uses for creating address for individual person
+    /// CreateAddress uses for creating address for individual person
     /// </summary>
     public record AddressCreate : Address
     {
