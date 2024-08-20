@@ -7,24 +7,24 @@ namespace nopCommerceWebApiClient.Interfaces.Address
     public interface IAddressService
     {
         [Get("/api/address")]
-        Task<IEnumerable<AddressDetailsDto>> GetAllAsync();
+        Task<IEnumerable<AddressDetails>> GetAllAsync();
 
         [Post("/api/address/add-with-nip")]
-        Task<AddressCreatePolishEnterpriseDto> CreateWithNipAsync(AddressCreatePolishEnterpriseDto newAdressDto);
+        Task<AddressDetails> CreateWithNipAsync(AddressCreatePolishEnterprise newAdressDto);
 
         [Post("/api/address/update-with-nip")]
-        Task<Objects.Address.Address> UpdateWithNipAsync(AddressUpdatePolishEnterpriseDto updateAddressDto);
+        Task<AddressDetails> UpdateWithNipAsync(AddressUpdatePolishEnterpriseDto updateAddressDto);
         
         [Post("/api/address/add")]        
-        Task<Objects.Address.Address> CreateAsync(AddressCreate addressDto);
+        Task<AddressDetails> CreateAsync(AddressCreate addressDto);
 
         [Delete("/api/address/{id}")]
         Task<bool> DeleteAsync(int id);
 
         [Put("/api/address")]
-        Task<Objects.Address.Address> UpdateAsync(AddressUpdateDto updateAddressDto);
+        Task<AddressDetails> UpdateAsync(AddressUpdateDto updateAddressDto);
 
         [Get("/api/address/{id}")]
-        Task<AddressDetailsDto> GetByIdAsync(int id);
+        Task<AddressDetails> GetByIdAsync(int id);
     }
 }
