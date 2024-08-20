@@ -12,8 +12,8 @@ namespace nopCommerceWebApiClient.Interfaces.Address
         [Post("/api/address/add-with-nip")]
         Task<AddressDetails> CreateWithNipAsync(AddressCreatePolishEnterprise newAdressDto);
 
-        [Post("/api/address/update-with-nip")]
-        Task<AddressDetails> UpdateWithNipAsync(AddressUpdatePolishEnterpriseDto updateAddressDto);
+        [Put("/api/address/update-with-nip")]
+        Task<AddressDetails> UpdateWithNipAsync(AddressUpdatePolishEnterprise updateAddressDto);
         
         [Post("/api/address/add")]        
         Task<AddressDetails> CreateAsync(AddressCreate addressDto);
@@ -22,7 +22,7 @@ namespace nopCommerceWebApiClient.Interfaces.Address
         Task<bool> DeleteAsync(int id);
 
         [Put("/api/address")]
-        Task<AddressDetails> UpdateAsync(AddressUpdateDto updateAddressDto);
+        Task<Objects.Address.Address> UpdateAsync(AddressUpdate updateAddressDto);
 
         [Get("/api/address/{id}")]
         Task<AddressDetails> GetByIdAsync(int id);
