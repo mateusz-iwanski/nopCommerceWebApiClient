@@ -103,14 +103,6 @@
         public virtual string? FaxNumber { get; init; }
 
         /// <summary>
-        /// ## CustomAttributes
-        /// ### Gets or sets the custom attributes (see "AddressAttribute" entity for more info).
-        /// #### It's in XML Format
-        /// *Defaul = null*
-        /// </summary>
-        public virtual string? CustomAttributes { get; }
-
-        /// <summary>
         /// ## CreatedOnUtc        
         /// ### Gets or sets the date and time of instance creation
         /// *Defaul = DateTime.Now*
