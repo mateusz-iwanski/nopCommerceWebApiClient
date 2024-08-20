@@ -15,7 +15,7 @@ namespace nopCommerceWebApiClient.Objects.Address
         private int _countryId;
 
         public override int Id { get; init; } = 0;
-        public override string City
+        public required override string City
         {
             get => _city;
             init
@@ -23,7 +23,7 @@ namespace nopCommerceWebApiClient.Objects.Address
                 _city = string.IsNullOrEmpty(value) ? throw new ArgumentNullException(nameof(City), "City cannot be null or empty") : value;
             }
         }
-        public override string Address1
+        public required override string Address1
         {
             get => _address1;
             init
@@ -31,7 +31,7 @@ namespace nopCommerceWebApiClient.Objects.Address
                 _address1 = string.IsNullOrEmpty(value) ? throw new ArgumentNullException(nameof(Address1), "Address1 cannot be null or empty") : value;
             }
         }
-        public new int CountryId
+        public required new int CountryId
         {
             get => _countryId;
             init
