@@ -4,12 +4,12 @@
 namespace nopCommerceWebApiClient.Objects.Country
 {
     /// <summary>
-    /// Country Data Transfer Object
+    /// CountryDto Data Transfer Object
     /// </summary>
     /// <remarks>
     /// This object should be used only for the get method in controller
     /// </remarks>
-    public record Country
+    public record CountryDto
     {
         public virtual int Id { get; init; }
         /// <summary>

@@ -28,12 +28,12 @@ namespace nopCommerceWebApiClient.Objects.Customer
         public virtual string? SystemName { get; init; }
         public virtual bool IsSystemAccount { get; init; }
 
-        public virtual Address.Address? BillingAddress { get; init; }
-        public virtual Address.Address? ShippingAddress { get; init; }
+        public virtual Address.AddressDto? BillingAddress { get; init; }
+        public virtual Address.AddressDto? ShippingAddress { get; init; }
         public virtual LanguageDto? Language { get; init; }
-        public virtual Country.Country? Country { get; init; }
+        public virtual Country.CountryDto? Country { get; init; }
         public virtual StateProvinceDto? StateProvince { get; init; }
-        public virtual Currency.Currency? Currency { get; init; }
+        public virtual Currency.CurrencyDto? Currency { get; init; }
         public virtual Guid CustomerGuid { get; init; }
         public virtual bool IsTaxExempt { get; init; }
         public virtual int VendorId { get; init; }

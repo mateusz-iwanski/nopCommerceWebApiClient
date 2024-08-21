@@ -8,7 +8,7 @@ namespace nopCommerceWebApiClient.Objects.Address
     /// <summary>
     /// CreateAddress uses for creating address for individual person
     /// </summary>
-    public record AddressCreate : Address
+    public record AddressCreateDto : AddressDto
     {
         private string _city;
         private string _address1;

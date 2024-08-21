@@ -1,6 +1,6 @@
 ﻿namespace nopCommerceWebApiClient.Objects.Currency
 {
-    public record Currency 
+    public record CurrencyDto 
     {
         public int Id { get; init; }
 

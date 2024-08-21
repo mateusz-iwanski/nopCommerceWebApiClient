@@ -7,6 +7,6 @@ namespace nopCommerceWebApiClient.Interfaces.Currency
     public interface ICurrencyService
     {
         [Get("/api/currency")]
-        Task<IEnumerable<CurrencyDto>> GetAllAsync();
+        Task<IEnumerable<Objects.Currency.CurrencyDto>> GetAllAsync();
     }
 }

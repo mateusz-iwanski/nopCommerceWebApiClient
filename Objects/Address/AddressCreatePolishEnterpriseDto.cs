@@ -3,12 +3,12 @@
 namespace nopCommerceWebApiClient.Objects.Address
 {
     /// <summary>
-    /// <c>AddressCreatePolishEnterprise</c> uses for creating enterprise address with the NIP value as a custom attribute for Poland.
+    /// <c>AddressCreatePolishEnterpriseDto</c> uses for creating enterprise address with the NIP value as a custom attribute for Poland.
     /// </summary>
     /// <remarks>
     /// Default nopCommerce not have this feature.
     /// </remarks> 
-    public record AddressCreatePolishEnterprise : Address
+    public record AddressCreatePolishEnterpriseDto : AddressDto
     {
         private string _nip;
         private string _city;

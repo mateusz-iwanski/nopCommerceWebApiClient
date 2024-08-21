@@ -3,7 +3,7 @@
 
 namespace nopCommerceWebApiClient.Objects.Category
 {
-    public record Category
+    public record CategoryDto
     {
         public virtual int Id { get; init; }
 
@@ -175,7 +175,7 @@ namespace nopCommerceWebApiClient.Objects.Category
         /// <summary>
         /// ## CategoryTemplateId
         /// ### Gets or sets a value of used category template identifier
-        /// #### Look on System -> Templates -> Category templates
+        /// #### Look on System -> Templates -> CategoryDto templates
         /// #### Doc: https://docs.nopcommerce.com/en/running-your-store/system-administration/templates.html
         /// *Default = 1*
         /// </summary>

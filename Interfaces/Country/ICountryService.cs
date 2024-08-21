@@ -7,7 +7,7 @@ namespace nopCommerceWebApiClient.Interfaces.Country
     public interface ICountryService
     {
         [Get("/api/country")]
-        Task<IEnumerable<Objects.Country.Country>> GetAllAsync();
+        Task<IEnumerable<Objects.Country.CountryDto>> GetAllAsync();
     }
 
 }

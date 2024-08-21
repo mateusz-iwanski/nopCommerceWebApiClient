@@ -2,7 +2,7 @@
 
 namespace nopCommerceWebApiClient.Objects.Category
 {
-    public record CategoryCreate : Category
+    public record CategoryCreateDto : CategoryDto
     {
         public new int Id { get; } = 0;
     }

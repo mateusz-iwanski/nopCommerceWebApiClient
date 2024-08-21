@@ -8,7 +8,7 @@ namespace nopCommerceWebApiClient.Objects.AddressAttribute
     /// <remarks>
     /// This object should be used only for the get method in controller
     /// </remarks>
-    public record AddressAttribute
+    public record AddressAttributeDto
     {
         public virtual int? Id { get; set; }
 

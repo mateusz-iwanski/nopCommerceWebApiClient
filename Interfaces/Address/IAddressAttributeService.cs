@@ -6,7 +6,7 @@ namespace nopCommerceWebApiClient.Interfaces.Address
     public interface IAddressAttributeService
     {
         [Get("/api/addressattribute")]
-        Task<IEnumerable<AddressAttribute>> GetAllAsync();
+        Task<IEnumerable<AddressAttributeDto>> GetAllAsync();
     }
 
     

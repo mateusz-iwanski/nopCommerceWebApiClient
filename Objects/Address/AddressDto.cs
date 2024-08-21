@@ -1,12 +1,12 @@
 ﻿namespace nopCommerceWebApiClient.Objects.Address
 {
     /// <summary>
-    /// Address Data 
+    /// AddressDto Data 
     /// </summary>
     /// <remarks>
     /// This object should be used only for the get method in controller
     /// </remarks>
-    public record Address
+    public record AddressDto
     {
         /// <summary>
         /// ## Id
