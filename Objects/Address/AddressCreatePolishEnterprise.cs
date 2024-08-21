@@ -14,7 +14,7 @@ namespace nopCommerceWebApiClient.Objects.Address
         private string _city;
         private string _address1;
 
-        public override int Id { get; init; } = 0;
+        public new int Id { get; } = 0;
 
         /// <summary>
         /// ## Company

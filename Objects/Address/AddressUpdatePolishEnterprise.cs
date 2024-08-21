@@ -8,6 +8,6 @@ namespace nopCommerceWebApiClient.Objects.Address
     /// </summary>
     public record AddressUpdatePolishEnterprise : AddressCreatePolishEnterprise
     {
-        public required override int Id { get; init; }
+        public required new int Id { get; init; }
     }
 }

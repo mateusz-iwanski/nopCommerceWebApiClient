@@ -14,7 +14,8 @@ namespace nopCommerceWebApiClient.Objects.Address
         private string _address1;
         private int _countryId;
 
-        public override int Id { get; init; } = 0;
+        public new int Id { get; } = 0;
+
         public required override string City
         {
             get => _city;
