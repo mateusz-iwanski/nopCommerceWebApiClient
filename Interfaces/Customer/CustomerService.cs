@@ -3,10 +3,7 @@ using Refit;
 
 namespace nopCommerceWebApiClient.Interfaces.Customer
 {
-    public class Password
-    {
-        public string password { get; set; }
-    }
+    public record Password (string password);
 
     public interface ICustomerService
     {
