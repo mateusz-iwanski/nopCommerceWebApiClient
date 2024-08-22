@@ -10,7 +10,7 @@ namespace nopCommerceWebApiClient.Interfaces.Address
         Task<IEnumerable<AddressDetailsDto>> GetAllAsync();
 
         [Post("/api/address/add-with-nip")]
-        Task<AddressDetailsDto> CreateWithNipAsync(AddressCreatePolishEnterpriseDto newAdressDto);
+        Task<HttpResponseMessage> CreateWithNipAsync(AddressCreatePolishEnterpriseDto newAdressDto);
 
         [Put("/api/address/update-with-nip")]
         Task<AddressDetailsDto> UpdateWithNipAsync(AddressUpdatePolishEnterpriseDto updateAddressDto);
