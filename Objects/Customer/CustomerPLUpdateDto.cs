@@ -5,6 +5,6 @@ namespace nopCommerceWebApiClient.Objects.Customer
 {
     public record CustomerPLUpdateDto : CustomerCreatePLDto
     {
-        public required int Id { get; set; }
+        public required int Id { get; init; }
     }
 }

@@ -21,13 +21,13 @@ namespace nopCommerceWebApiClient.Objects.Customer
         /// ### Sets the username
         /// </summary>
         //[Required]
-        public required string Username { get; set; }
+        public required string Username { get; init; }
 
         /// <summary>
         /// ## Password
         /// ### Sets the password
         /// </summary>
-        public virtual string Password { get; set; }
+        public virtual string Password { get; init; }
 
         /// <summary>
         /// ## Email
@@ -35,61 +35,61 @@ namespace nopCommerceWebApiClient.Objects.Customer
         /// </summary>
         //[Required]
         [EmailAddress]
-        public string Email { get; set; }
+        public string Email { get; init; }
 
         /// <summary>
         /// ## FirstName
         /// ### Gets or sets the first name
         /// </summary>
-        public string? FirstName { get; set; }
+        public string? FirstName { get; init; }
 
         /// <summary>
         /// ## LastName
         /// ### Gets or sets the last name
         /// </summary>
-        public string? LastName { get; set; }
+        public string? LastName { get; init; }
 
         /// <summary>
         /// ## Company
         /// ### Gets or sets the company name
         /// </summary>
-        public string? Company { get; set; }
+        public string? Company { get; init; }
 
         /// <summary>
         /// ## StreetAddress
         /// ### Gets or sets the street address
         /// </summary>
-        public virtual string? StreetAddress { get; set; }
+        public virtual string? StreetAddress { get; init; }
 
         /// <summary>
         /// ## StreetAddress2
         /// ### Gets or sets the street address 2
         /// </summary>
-        public virtual string? StreetAddress2 { get; set; }
+        public virtual string? StreetAddress2 { get; init; }
 
         /// <summary>
         /// ## ZipPostalCode
         /// ### Gets or sets the zip
         /// </summary>
-        public virtual string? ZipPostalCode { get; set; }
+        public virtual string? ZipPostalCode { get; init; }
 
         /// <summary>
         /// ## City
         /// ### Gets or sets the city
         /// </summary>
-        public virtual string? City { get; set; }
+        public virtual string? City { get; init; }
 
         /// <summary>
         /// ## County
         /// ### Gets or sets the county
         /// </summary>
-        public virtual string? County { get; set; }
+        public virtual string? County { get; init; }
 
         /// <summary>
         /// ## Phone
         /// ### Gets or sets the phone number
         /// </summary>
-        public virtual string? Phone { get; set; }
+        public virtual string? Phone { get; init; }
 
         //[JsonIgnore]
         public bool IsTaxExempt

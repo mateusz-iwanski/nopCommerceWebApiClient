@@ -13,16 +13,16 @@ namespace nopCommerceWebApiClient.Objects.Customer
 
     public record CustomerRoleDto
     {
-        public int Id { get; set; }
-        public string Name { get; set; } = null!;
-        public string? SystemName { get; set; }
+        public int Id { get; init; }
+        public string Name { get; init; } = null!;
+        public string? SystemName { get; init; }
         public bool FreeShipping {  get; set; }
-        public bool TaxExempt { get; set; }
-        public bool Active { get; set; }
-        public bool IsSystemRole { get; set; }
-        public bool EnablePasswordLifetime { get; set; }
-        public bool OverrideTaxDisplayType { get; set; }
-        public int DefaultTaxDisplayTypeId { get; set; }
-        public int PurchasedWithProductId { get; set; }
+        public bool TaxExempt { get; init; }
+        public bool Active { get; init; }
+        public bool IsSystemRole { get; init; }
+        public bool EnablePasswordLifetime { get; init; }
+        public bool OverrideTaxDisplayType { get; init; }
+        public int DefaultTaxDisplayTypeId { get; init; }
+        public int PurchasedWithProductId { get; init; }
     }
 }
