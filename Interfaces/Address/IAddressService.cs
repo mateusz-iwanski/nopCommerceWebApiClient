@@ -19,7 +19,7 @@ namespace nopCommerceWebApiClient.Interfaces.Address
         Task<AddressDetailsDto> CreateAsync(AddressCreateDto addressDto);
 
         [Delete("/api/address/{id}")]
-        Task DeleteAsync([AliasAs("id")] int id);
+        Task<HttpResponseMessage> DeleteAsync([AliasAs("id")] int id);
 
         [Put("/api/address")]
         Task<Objects.Address.AddressDto> UpdateAsync(AddressUpdateDto updateAddressDto);
