@@ -10,17 +10,17 @@ namespace nopCommerceWebApiClient.Objects.AddressAttribute
     /// </remarks>
     public record AddressAttributeDto
     {
-        public virtual int? Id { get; set; }
+        public virtual int? Id { get; init; }
 
         /// <summary>
         /// Gets or sets the name
         /// </summary>
-        public virtual string? Name { get; set; }
+        public virtual string? Name { get; init; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the attribute is required
         /// </summary>
-        public virtual bool? IsRequired { get; set; }
+        public virtual bool? IsRequired { get; init; }
 
         /// <summary>
         /// From Nop.Core.Domain.Catalog.AttributeControlType enum type (compatible with nopCommerce 4.70.3)
@@ -36,11 +36,11 @@ namespace nopCommerceWebApiClient.Objects.AddressAttribute
         /// - ImageSquares (45): A selection of image squares allowing users to pick an image.
         /// - ReadonlyCheckboxes (50): A group of checkboxes that are read-only, typically used for displaying information.
         /// </summary>
-        public virtual int? AttributeControlTypeId { get; set; }
+        public virtual int? AttributeControlTypeId { get; init; }
 
         /// <summary>
         /// Gets or sets the display order
         /// </summary>
-        public virtual int? DisplayOrder { get; set; }
+        public virtual int? DisplayOrder { get; init; }
     }
 }
