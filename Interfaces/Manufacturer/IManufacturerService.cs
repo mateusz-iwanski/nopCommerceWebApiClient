@@ -19,6 +19,6 @@ namespace nopCommerceWebApiClient.Interfaces.Manufacturer
         Task<ManufacturerDto> GetByIdAsync([AliasAs("id")] int id);
 
         [Delete("/api/manufacturer/{id}")]
-        Task<bool> DeleteAsync([AliasAs("id")] int id);
+        Task<HttpResponseMessage> DeleteAsync([AliasAs("id")] int id);
     }
 }
