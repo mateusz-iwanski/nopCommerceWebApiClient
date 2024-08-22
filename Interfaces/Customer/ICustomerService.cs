@@ -10,17 +10,20 @@ namespace nopCommerceWebApiClient.Interfaces.Customer
         [Get("/api/customer")]
         Task<IEnumerable<Objects.Customer.CustomerDto>> GetAllAsync();
 
+        [Get("/api/customer/{id}")]
+        Task<CustomerDto> GetByIdAsync([AliasAs("id")] int id);
+
         [Post("/api/customer/pl")]
-        Task<string> CreatePLAsync(CustomerCreatePLDto createCustomerDto);
+        Task<HttpResponseMessage> CreatePLAsync(CustomerCreatePLDto createCustomerDto);
 
         [Put("/api/customer/connect/address/{customerGuid}/{shippingAddressId}")]
-        Task ConnectToAddressAsync([AliasAs("customerGuid")] Guid customerGuid, [AliasAs("shippingAddressId")] int addressId);
+        Task<HttpResponseMessage> ConnectToAddressAsync([AliasAs("customerGuid")] Guid customerGuid, [AliasAs("shippingAddressId")] int addressId);
 
         [Put("/api/customer/update/pl")]
         Task<Objects.Customer.CustomerDto> UpdatePLAsync(CustomerPLUpdateDto updateCustomerDto);
 
         [Put("/api/customer/update/password/{customerGuid}")]
-        Task UpdatePasswordAsync([AliasAs("customerGuid")] Guid customerGuid, [Body] Password newPassword);
+        Task<HttpResponseMessage> UpdatePasswordAsync([AliasAs("customerGuid")] Guid customerGuid, [Body] Password newPassword);
     }
 }
 
