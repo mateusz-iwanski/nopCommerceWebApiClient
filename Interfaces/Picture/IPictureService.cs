@@ -6,10 +6,10 @@ namespace nopCommerceWebApiClient.Interfaces.Picture
     public interface IPictureService
     {
         [Post("/api/picture")]
-        Task<PictureDto> CreateAsync(PictureCreateDto pictureCreateDto);
+        Task<HttpResponseMessage> CreateAsync(PictureCreateDto pictureCreateDto);
 
         [Delete("/api/picture/{id}")]
-        Task<bool> DeleteAsync(int id);
+        Task<HttpResponseMessage> DeleteAsync(int id);
 
         [Get("/api/picture")]
         Task<IEnumerable<PictureDto>> GetAllAsync();
@@ -18,7 +18,7 @@ namespace nopCommerceWebApiClient.Interfaces.Picture
         Task<PictureDto> GetByIdAsync([AliasAs("id")] int id);
 
         [Put("/api/picture")]
-        Task UpdateAsync(PictureUpdateDto pictureUpdateDto);
+        Task<HttpResponseMessage> UpdateAsync(PictureUpdateDto pictureUpdateDto);
 
         [Get("/api/picture/proper-name/{pictureId}")]
         Task<string> ProperNameForPictureFileAsync(int pictureId);
