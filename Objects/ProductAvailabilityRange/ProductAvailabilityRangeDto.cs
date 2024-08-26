@@ -12,18 +12,18 @@ namespace nopCommerceWebApiClient.Objects.ProductAvailabilityRange
     /// </remarks>
     public record ProductAvailabilityRangeDto
     {
-        public virtual int Id { get; set; }
+        public virtual int Id { get; init; }
 
         /// <summary>
         /// ## Name
         /// ### Gets or sets the name
         /// </summary>
-        public required virtual string Name { get; set; }
+        public required virtual string Name { get; init; }
 
         /// <summary>
         /// ## DisplayOrder
         /// ### Gets or sets the display order
         /// </summary>
-        public virtual int DisplayOrder { get; set; }
+        public virtual int DisplayOrder { get; init; }
     }
 }
