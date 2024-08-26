@@ -5,7 +5,7 @@ namespace nopCommerceWebApiClient.Objects.ProductAttributeValue
 {
     public record ProductAttributeValueUpdateDto : ProductAttributeValueDto
     {
-        public required new int Id { get; set; }
+        public required new int Id { get; init; }
 
         /// <summary>
         /// ## ProductAttributeMappingId
