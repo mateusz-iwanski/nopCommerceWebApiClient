@@ -5,10 +5,26 @@ using System.ComponentModel.DataAnnotations;
 
 namespace nopCommerceWebApiClient.Objects.Customer
 {
+    public interface ICustomerCreatePLDto
+    {
+        string? City { get; init; }
+        string? Company { get; init; }
+        string? County { get; init; }
+        string Email { get; init; }
+        string? FirstName { get; init; }
+        string? LastName { get; init; }
+        string Password { get; init; }
+        string? Phone { get; init; }
+        string? StreetAddress { get; init; }
+        string? StreetAddress2 { get; init; }
+        string Username { get; init; }
+        string? ZipPostalCode { get; init; }
+    }
+
     /// <summary>
     /// <c>CustomerCreatePLDto</c> uses for creating nopCommerce customer
     /// </summary>
-    public record CustomerCreatePLDto 
+    public record CustomerCreatePLDto : ICustomerCreatePLDto
     {
         private bool _isTaxExempt = false; // every PL customer is not tax exempt
         private int _vendorId = 0; // disable multi-vendor option
