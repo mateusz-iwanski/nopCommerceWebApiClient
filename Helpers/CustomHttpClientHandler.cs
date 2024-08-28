@@ -42,7 +42,7 @@ namespace nopCommerceWebApiClient.Helpers
                 try
                 {
                     var requestContent = await request.Content.ReadAsStringAsync();
-                    if (requestContent != null) _logger.Info($"{processId} Request Payload: {requestContent}");
+                    if (requestContent != null) _logger.Info($"{processId} Request payload: {requestContent}");
                 }
                 catch { }
 
@@ -56,7 +56,7 @@ namespace nopCommerceWebApiClient.Helpers
                             _logger.Error($"{processId} Request uri: {request.RequestUri}");
                             _logger.Error($"{processId} Request method: {request.Method}");
                             _logger.Error($"{processId} Response status code: {response.StatusCode}");
-                            _logger.Info($"{processId} Request Payload: {content}");
+                            _logger.Info($"{processId} Response payload: {content}");
 
                             var errorContent = JsonSerializer.Deserialize<ValidationErrorResponse>(content);
                             if (errorContent?.Errors != null && errorContent.Errors.Count > 0)
