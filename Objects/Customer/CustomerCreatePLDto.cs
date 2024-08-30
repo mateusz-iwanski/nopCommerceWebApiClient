@@ -36,22 +36,20 @@ namespace nopCommerceWebApiClient.Objects.Customer
         /// ## Username
         /// ### Sets the username
         /// </summary>
-        //[Required]
         public required string Username { get; init; }
 
         /// <summary>
         /// ## Password
         /// ### Sets the password
         /// </summary>
-        public virtual string Password { get; init; }
+        public required virtual string Password { get; init; }
 
         /// <summary>
         /// ## Email
         /// ### Sets the email
         /// </summary>
-        //[Required]
         [EmailAddress]
-        public string Email { get; init; }
+        public required string Email { get; init; }
 
         /// <summary>
         /// ## FirstName
@@ -140,6 +138,15 @@ namespace nopCommerceWebApiClient.Objects.Customer
         {
             get => _isSystemAccount;
             set { }
+        }
+
+        public override string ToString()
+        {
+            return $"Username: {Username}, Email: {Email}, FirstName: {FirstName}, LastName: {LastName}, " +
+                   $"Company: {Company}, StreetAddress: {StreetAddress}, StreetAddress2: {StreetAddress2}, " +
+                   $"ZipPostalCode: {ZipPostalCode}, City: {City}, County: {County}, Phone: {Phone}, " +
+                   $"IsTaxExempt: {IsTaxExempt}, VendorId: {VendorId}, Active: {Active}, Deleted: {Deleted}, " +
+                   $"IsSystemAccount: {IsSystemAccount}";
         }
 
     }
