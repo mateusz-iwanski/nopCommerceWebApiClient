@@ -11,7 +11,7 @@ namespace nopCommerceWebApiClient.Objects.Customer
 {
     public record CustomerDto
     {
-        public virtual string Id { get; init; }  
+        public virtual int Id { get; init; }  
         public virtual string? Username { get; init; }
         public virtual string Email { get; init; }
         public virtual DateTime CreatedOnUtc { get; init; }
@@ -39,5 +39,14 @@ namespace nopCommerceWebApiClient.Objects.Customer
         public virtual int VendorId { get; init; }
         public virtual bool Active { get; init; } = true;
         public virtual bool Deleted { get; init; }
+
+        public override string ToString()
+        {
+            return $"ID: {Id}, Username: {Username}, Email: {Email}, FirstName: {FirstName}, LastName: {LastName}, " +
+                   $"Company: {Company}, StreetAddress: {StreetAddress}, StreetAddress2: {StreetAddress2}, " +
+                   $"ZipPostalCode: {ZipPostalCode}, City: {City}, County: {County}, Phone: {Phone}, " +
+                   $"IsTaxExempt: {IsTaxExempt}, VendorId: {VendorId}, Active: {Active}, Deleted: {Deleted}, " +
+                   $"IsSystemAccount: {IsSystemAccount}";
+        }
     }
 }
