@@ -5,6 +5,8 @@ using nopCommerceWebApiClient.Objects.Country;
 using nopCommerceWebApiClient.Objects.Currency;
 using nopCommerceWebApiClient.Objects.Language;
 using nopCommerceWebApiClient.Objects.State;
+using System.Reflection;
+using System.Text;
 
 
 namespace nopCommerceWebApiClient.Objects.Customer
@@ -40,13 +42,5 @@ namespace nopCommerceWebApiClient.Objects.Customer
         public virtual bool Active { get; init; } = true;
         public virtual bool Deleted { get; init; }
 
-        public override string ToString()
-        {
-            return $"ID: {Id}, Username: {Username}, Email: {Email}, FirstName: {FirstName}, LastName: {LastName}, " +
-                   $"Company: {Company}, StreetAddress: {StreetAddress}, StreetAddress2: {StreetAddress2}, " +
-                   $"ZipPostalCode: {ZipPostalCode}, City: {City}, County: {County}, Phone: {Phone}, " +
-                   $"IsTaxExempt: {IsTaxExempt}, VendorId: {VendorId}, Active: {Active}, Deleted: {Deleted}, " +
-                   $"IsSystemAccount: {IsSystemAccount}";
-        }
     }
 }
