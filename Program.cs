@@ -720,7 +720,12 @@ namespace nopCommerceWebApiClient
             //Console.WriteLine(await ivideoService.GetByIdAsync(4));
 
 
-            //Console.WriteLine(await ivideoService.GetByUrlAsync("string2.com"));
+            Console.WriteLine(await ivideoService.GetByUrlAsync("string2.com"));
+
+            var taxApi = RestService.For<ITaxCategoryService>(httpClient);
+            var a = await taxApi.GetByName("PL_8_procent_podstawowa");
+
+            Console.WriteLine(a.Id);
         }
     }
 }
