@@ -1,6 +1,7 @@
 ﻿using NLog;
 using NLog.Web;
 using nopCommerceWebApiClient.Helpers;
+using nopCommerceWebApiClient.Interfaces;
 using nopCommerceWebApiClient.Interfaces.Address;
 using nopCommerceWebApiClient.Interfaces.Category;
 using nopCommerceWebApiClient.Interfaces.Country;
@@ -12,6 +13,7 @@ using nopCommerceWebApiClient.Interfaces.Picture;
 using nopCommerceWebApiClient.Interfaces.Product;
 using nopCommerceWebApiClient.Interfaces.SpecificationAttribute;
 using nopCommerceWebApiClient.Interfaces.StateProvince;
+using nopCommerceWebApiClient.Interfaces.Tax;
 using nopCommerceWebApiClient.Interfaces.TierPrice;
 using nopCommerceWebApiClient.Interfaces.UrlRecord;
 using nopCommerceWebApiClient.Interfaces.Video;
@@ -51,6 +53,8 @@ namespace nopCommerceWebApiClient
         ISpecificationAttributeOptionService SpecificationAttributeOptionService { get; }
         ISpecificationAttributeService SpecificationAttributeService { get; }
         IStateProvinceService StateProvinceService { get; }
+        ITaxCategoryService TaxCategoryService { get; }
+        ITaxRateService TaxRateService { get; }
         ITierPriceService TierPriceService { get; }
         IUrlRecordService UrlRecordService { get; }
         IVideoService VideoService { get; }
@@ -82,6 +86,8 @@ namespace nopCommerceWebApiClient
         public ISpecificationAttributeOptionService SpecificationAttributeOptionService { get; private set; }
         public ISpecificationAttributeService SpecificationAttributeService { get; private set; }
         public IStateProvinceService StateProvinceService { get; private set; }
+        public ITaxCategoryService TaxCategoryService { get; private set; }
+        public ITaxRateService TaxRateService { get; private set; }
         public ITierPriceService TierPriceService { get; private set; }
         public IUrlRecordService UrlRecordService { get; private set; }
         public IVideoService VideoService { get; private set; }
@@ -112,6 +118,8 @@ namespace nopCommerceWebApiClient
             SpecificationAttributeOptionService = RestService.For<ISpecificationAttributeOptionService>(httpClient);
             SpecificationAttributeService = RestService.For<ISpecificationAttributeService>(httpClient);
             StateProvinceService = RestService.For<IStateProvinceService>(httpClient);
+            TaxCategoryService = RestService.For<ITaxCategoryService>(httpClient);
+            TaxRateService = RestService.For<ITaxRateService>(httpClient);
             TierPriceService = RestService.For<ITierPriceService>(httpClient);
             UrlRecordService = RestService.For<IUrlRecordService>(httpClient);
             VideoService = RestService.For<IVideoService>(httpClient);
