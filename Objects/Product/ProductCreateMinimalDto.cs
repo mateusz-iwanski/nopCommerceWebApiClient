@@ -1,5 +1,7 @@
 ﻿
 
+using System.Text.Json.Serialization;
+
 namespace nopCommerceWebApiClient.Objects.Product
 {
     /// <summary>
@@ -14,63 +16,72 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// ## Name
         /// ### Set the name
         /// </summary>
-        //[Required]
-        public string Name { get; init; }
+        public required string Name { get; init; }
 
         /// <summary>
         /// ## SKU
         /// ### Set the SKU
         /// </summary>
-        //[Required]
-        public string Sku { get; init; }
+        public required string Sku { get; init; }
 
         /// <summary>
         /// ## Price
         /// ### Set the price
         /// #### The price of the product. You can manage currency by selecting Configuration > Currencies.
         /// </summary>
-        //[Required]
-        public decimal Price { get; init; }
+        public required decimal Price { get; init; }
 
         /// <summary>
         /// ## TaxCategoryId
         /// ### Set the tax category identifier
-        /// #### Look on TaxCategory schema for more details.
+        /// #### Look on TaxCategory schema for more details.        
         /// </summary>
-        //[Required]
-        public int TaxCategoryId { get; init; }
+        /// <remarks>
+        /// We can set the tax category after the object is initialized.
+        /// </remarks>
+        public required int TaxCategoryId { get; init; }
 
         /// <summary>
         /// ## Weight
         /// ### Set the weight
         /// #### To set mesasures go to Configuration → Shipping → Measures 
         /// </summary>
-        //[Required]
-        public decimal Weight { get; init; }
+        public required decimal Weight { get; init; }
 
         /// <summary>
         /// ## Length
         /// ### Set the length
         /// #### To set mesasures go to Configuration → Shipping → Measures 
         /// </summary>
-        //[Required]
-        public decimal Length { get; init; }
+        public required decimal Length { get; init; }
 
         /// <summary>
         /// ## Width
         /// ### Set the width
         /// #### To set mesasures go to Configuration → Shipping → Measures 
         /// </summary>
-        //[Required]
-        public decimal Width { get; init; }
+        public required decimal Width { get; init; }
 
         /// <summary>
         /// ## Height
-        /// ### Set the height
+        /// ### Set the height (depth)
         /// #### To set mesasures go to Configuration → Shipping → Measures 
         /// </summary>
-        //[Required]
-        public decimal Height { get; init; }
+        public required decimal Height { get; init; }
 
+        /// <summary>
+        /// ## Gtin
+        /// ### Set the Global Trade Item Number (GTIN). 
+        /// #### These identifiers include UPC (in North America), EAN (in Europe), JAN (in Japan), and ISBN (for books).
+        /// *Default = null*
+        /// </summary>
+        public override string? Gtin { get; init; }
+
+        [JsonIgnore]
+        /// <summary>
+        /// Virtual field used to read the correct category from the nopCommerce database.  
+        /// This value is set by external service data.
+        /// </summary>
+        public decimal? VatValue { get; init; }
     }
 }
