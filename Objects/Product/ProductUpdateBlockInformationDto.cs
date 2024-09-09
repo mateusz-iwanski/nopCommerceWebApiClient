@@ -15,20 +15,20 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// ## ShortDescription
         /// ### Short description is the text that is displayed in product list i.e. category / manufacturer pages.
         /// </summary>
-        public virtual string ShortDescription { get; init; }
+        public virtual string? ShortDescription { get; init; }
 
         /// <summary>
         /// ## FullDescription
         /// ### Full description is the text that is displayed in product page.
         /// </summary>
-        public virtual string FullDescription { get; init; }
+        public virtual string? FullDescription { get; init; }
 
 
         /// <summary>
         /// ## ManufacturerPartNumber
         /// ### Set the manufacturer part number.
         /// </summary>
-        public virtual string ManufacturerPartNumber { get; init; }
+        public virtual string? ManufacturerPartNumber { get; init; }
 
         /// <summary>        
         /// ## Published
@@ -208,14 +208,13 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// ### This comment is for internal use only, not visible for customers.
         /// *Defaul = null*
         /// </summary>
-        public virtual string AdminComment { get; init; }
+        public virtual string? AdminComment { get; init; }
 
         /// <summary>
         /// ## UpdatedOnUtc
         /// ### Set the date and time of product update.
         /// *Default = DateTime.Now*
         /// </summary>
-        //[JsonIgnore]
         public virtual DateTime? UpdatedOnUtc { get; init; } = DateTime.Now;
 
         #endregion
