@@ -12,7 +12,7 @@ namespace nopCommerceWebApiClient.Interfaces.Product
         Task<ProductDto> GetByIdAsync(int id);
 
         [Post("/api/product/add/minimal")]
-        Task<ProductDto> CreateMinimalAsync(ProductCreateMinimalDto productDto);
+        Task<HttpResponseMessage> CreateMinimalAsync(ProductCreateMinimalDto productDto);
 
         [Post("/api/product/{id}")]
         Task<HttpResponseMessage> DeleteAsync([AliasAs("id")] int id);
