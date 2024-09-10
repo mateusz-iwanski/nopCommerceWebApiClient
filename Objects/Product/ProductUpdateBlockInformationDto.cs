@@ -2,12 +2,25 @@
 
 
 
+using nopCommerceWebApiClient.Interfaces;
+using System;
+using System.Reflection;
+using System.Text.Json.Serialization;
+
 namespace nopCommerceWebApiClient.Objects.Product
 {
-    public record ProductUpdateBlockInformationDto
+    
+}
+
+namespace nopCommerceWebApiClient.Objects.Product
+{
+    public record ProductUpdateBlockInformationDto : IDto
     {
+        [JsonIgnore]
+        public Type Type => typeof(ProductDto);
+
         //[JsonIgnore]
-        public int Id { get; init; }
+        public int Id { get; set; }
 
         #region Product information
 
@@ -15,34 +28,34 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// ## ShortDescription
         /// ### Short description is the text that is displayed in product list i.e. category / manufacturer pages.
         /// </summary>
-        public virtual string? ShortDescription { get; init; }
+        public virtual string? ShortDescription { get; set; }
 
         /// <summary>
         /// ## FullDescription
         /// ### Full description is the text that is displayed in product page.
         /// </summary>
-        public virtual string? FullDescription { get; init; }
+        public virtual string? FullDescription { get; set; }
 
 
         /// <summary>
         /// ## ManufacturerPartNumber
         /// ### Set the manufacturer part number.
         /// </summary>
-        public virtual string? ManufacturerPartNumber { get; init; }
+        public virtual string? ManufacturerPartNumber { get; set; }
 
         /// <summary>        
         /// ## Published
         /// ### Set a value indicating whether the entity is published.
         /// *Default = false*
         /// </summary>        
-        public virtual bool Published { get; init; }
+        public virtual bool Published { get; set; }
 
         /// <summary>
         /// ## Deleted
         /// ### Set a value indicating whether the entity has been deleted.
         /// *Default = false*
         /// </summary>
-        public virtual bool Deleted { get; init; }
+        public virtual bool Deleted { get; set; }
 
         /// <summary>
         /// ## Gtin
@@ -50,7 +63,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### These identifiers include UPC (in North America), EAN (in Europe), JAN (in Japan), and ISBN (for books).
         /// *Default = null*
         /// </summary>
-        public virtual string? Gtin { get; init; }
+        public virtual string? Gtin { get; set; }
 
         /// <summary>
         /// ## ProductTypeId 
@@ -61,7 +74,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// * SimpleProduct (5): A simple product. (*Default setting*)
         /// * GroupedProduct (10): A grouped product (product with variants).
         /// </summary>
-        public virtual int ProductTypeId { get; init; }
+        public virtual int ProductTypeId { get; set; }
 
         /// <summary>
         /// ## ProductTemplateId
@@ -71,7 +84,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### Doc: https://docs.nopcommerce.com/en/running-your-store/system-administration/templates.html
         /// *Default = 1 (Simple Product)*
         /// </summary>
-        public virtual int ProductTemplateId { get; init; }
+        public virtual int ProductTemplateId { get; set; }
 
         /// <summary>
         /// ## VendorId
@@ -80,7 +93,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### If is not multi-vendor store, then this field should be set to 0.   
         /// *Default = 0*
         /// </summary>
-        public virtual int VendorId { get; init; }
+        public virtual int VendorId { get; set; }
 
         /// <summary>
         /// ## RequireOtherProducts
@@ -88,7 +101,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### If you set to true you have use RequiredProductIds.
         /// *Default = false*
         /// </summary>
-        public virtual bool RequireOtherProducts { get; init; }
+        public virtual bool RequireOtherProducts { get; set; }
 
         /// <summary>
         /// ## RequiredProductIds
@@ -97,21 +110,21 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### It's only work when RequireOtherProducts = true.
         /// *Default = null*
         /// </summary>
-        public virtual string? RequiredProductIds { get; init; }
+        public virtual string? RequiredProductIds { get; set; }
 
         /// <summary>
         /// ## AutomaticallyAddRequiredProducts
         /// ### Set a value indicating whether required products (RequiredProductIds) are automatically added to the cart.
         /// *Default = false*
         /// </summary>
-        public virtual bool AutomaticallyAddRequiredProducts { get; init; }
+        public virtual bool AutomaticallyAddRequiredProducts { get; set; }
 
         /// <summary>
         /// ## ShowOnHomepage
         /// ### Gets or sets a value indicating whether to display this product on your store's home page. Recommended for your most popular products.
         /// *Default = false*
         /// </summary>
-        public virtual bool ShowOnHomepage { get; init; }
+        public virtual bool ShowOnHomepage { get; set; }
 
         /// <summary>
         /// ## ShowOnHomepage
@@ -120,7 +133,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### This value is used when sorting home page products.
         /// *Default = 0*
         /// </summary>
-        public virtual int DisplayOrder { get; init; }
+        public virtual int DisplayOrder { get; set; }
 
         /// <summary>
         /// ## ParentGroupedProductId
@@ -133,7 +146,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### Doc: https://docs.nopcommerce.com/en/running-your-store/catalog/products/grouped-products-variants.html
         /// *Default = 0*
         /// </summary>
-        public virtual int ParentGroupedProductId { get; init; }
+        public virtual int ParentGroupedProductId { get; set; }
 
         /// <summary>
         /// ## VisibleIndividually
@@ -142,7 +155,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### This way associated products could be accessed/added/etc only from a grouped product details page.
         /// *Default = true*
         /// </summary>
-        public virtual bool VisibleIndividually { get; init; }
+        public virtual bool VisibleIndividually { get; set; }
 
         /// <summary>
         /// ## SubjectToAcl
@@ -150,7 +163,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### Set a value indicating whether the entity is subject to ACL.
         /// *Default = true*
         /// </summary>
-        public virtual bool SubjectToAcl { get; init; }
+        public virtual bool SubjectToAcl { get; set; }
 
         /// <summary>
         /// ## LimitedToStores
@@ -160,14 +173,14 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### following setting: Catalog settings > Ignore ACL rules.
         /// *Default = false*
         /// </summary>
-        public virtual bool LimitedToStores { get; init; }
+        public virtual bool LimitedToStores { get; set; }
 
         /// <summary>
         /// ## AvailableStartDateTimeUtc
         /// ### Set the start product available to customers at start date
         /// *Default = null*
         /// </summary>
-        public virtual DateTime? AvailableStartDateTimeUtc { get; init; }
+        public virtual DateTime? AvailableStartDateTimeUtc { get; set; }
 
         /// <summary>
         /// ## AvailableEndDateTimeUtc
@@ -175,7 +188,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### Set the end of the product available to customers on the end date
         /// *Default = null*
         /// </summary>
-        public virtual DateTime? AvailableEndDateTimeUtc { get; init; }
+        public virtual DateTime? AvailableEndDateTimeUtc { get; set; }
 
         /// <summary>
         /// ## MarkAsNew
@@ -183,7 +196,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### Check to mark the product as new. Use this option for promoting new products.
         /// *Default = true*
         /// </summary>
-        public virtual bool MarkAsNew { get; init; }
+        public virtual bool MarkAsNew { get; set; }
 
         /// <summary>
         /// ## MarkAsNewStartDateTimeUtc
@@ -192,7 +205,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### Set Product as New from Date in Coordinated Universal Time (UTC).
         /// *Default = null*
         /// </summary>
-        public virtual DateTime? MarkAsNewStartDateTimeUtc { get; init; }
+        public virtual DateTime? MarkAsNewStartDateTimeUtc { get; set; }
 
         /// <summary>
         /// ## MarkAsNewEndDateTimeUtc
@@ -201,21 +214,21 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### Set Product as New to Date in Coordinated Universal Time (UTC).
         /// *Default = null*
         /// </summary>
-        public virtual DateTime? MarkAsNewEndDateTimeUtc { get; init; }
+        public virtual DateTime? MarkAsNewEndDateTimeUtc { get; set; }
 
         /// <summary>
         /// ## AdminComment
         /// ### This comment is for internal use only, not visible for customers.
         /// *Defaul = null*
         /// </summary>
-        public virtual string? AdminComment { get; init; }
+        public virtual string? AdminComment { get; set; }
 
         /// <summary>
         /// ## UpdatedOnUtc
         /// ### Set the date and time of product update.
         /// *Default = DateTime.Now*
         /// </summary>
-        public virtual DateTime? UpdatedOnUtc { get; init; } = DateTime.Now;
+        public virtual DateTime? UpdatedOnUtc { get; set; } = DateTime.Now;
 
         #endregion
     }
