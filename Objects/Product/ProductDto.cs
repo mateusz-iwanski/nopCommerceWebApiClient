@@ -1,5 +1,8 @@
 ﻿
 
+using nopCommerceWebApiClient.Interfaces;
+using System.Text.Json.Serialization;
+
 namespace nopCommerceWebApiClient.Objects.Product
 {
     /// <summary>
@@ -8,8 +11,11 @@ namespace nopCommerceWebApiClient.Objects.Product
     /// <remarks>
     /// Should be used only for the get method in controller
     /// </remarks>
-    public record ProductDto
+    public record ProductDto : IDto
     {
+        [JsonIgnore]
+        public Type Type => typeof(ProductDto);
+
         public virtual int Id { get; init; }
 
         #region Product information
@@ -932,6 +938,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### To set mesasures go to Configuration → Shipping → Measures 
         /// </summary>
         public virtual decimal Height { get; init; }
+
 
         #endregion
 
