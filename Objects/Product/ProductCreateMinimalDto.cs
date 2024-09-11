@@ -1,6 +1,4 @@
-﻿
-
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace nopCommerceWebApiClient.Objects.Product
 {
@@ -13,28 +11,24 @@ namespace nopCommerceWebApiClient.Objects.Product
     public record ProductCreateMinimalDto : ProductCreateDefault
     {
         /// <summary>
-        /// ## Name
-        /// ### Set the name
+        /// Set the name
         /// </summary>
         public required string Name { get; init; }
 
         /// <summary>
-        /// ## SKU
-        /// ### Set the SKU
+        /// Set the SKU
         /// </summary>
         public required string Sku { get; init; }
 
         /// <summary>
-        /// ## Price
-        /// ### Set the price
-        /// #### The price of the product. You can manage currency by selecting Configuration > Currencies.
+        /// Set the price
+        /// The price of the product. You can manage currency by selecting Configuration > Currencies.
         /// </summary>
         public required decimal Price { get; init; }
 
         /// <summary>
-        /// ## TaxCategoryId
-        /// ### Set the tax category identifier
-        /// #### Look on TaxCategory schema for more details.        
+        /// Set the tax category identifier
+        /// Look on TaxCategory schema for more details.        
         /// </summary>
         /// <remarks>
         /// We can set the tax category after the object is initialized.
@@ -42,39 +36,37 @@ namespace nopCommerceWebApiClient.Objects.Product
         public required int TaxCategoryId { get; init; }
 
         /// <summary>
-        /// ## Weight
-        /// ### Set the weight
-        /// #### To set mesasures go to Configuration → Shipping → Measures 
+        /// Set the weight
+        /// To set mesasures go to Configuration → Shipping → Measures 
         /// </summary>
         public required decimal Weight { get; init; }
 
         /// <summary>
-        /// ## Length
-        /// ### Set the length
-        /// #### To set mesasures go to Configuration → Shipping → Measures 
+        /// Set the length
+        /// To set mesasures go to Configuration → Shipping → Measures 
         /// </summary>
         public required decimal Length { get; init; }
 
         /// <summary>
-        /// ## Width
-        /// ### Set the width
-        /// #### To set mesasures go to Configuration → Shipping → Measures 
+        /// Set the width
+        /// To set mesasures go to Configuration → Shipping → Measures 
         /// </summary>
         public required decimal Width { get; init; }
 
         /// <summary>
-        /// ## Height
-        /// ### Set the height (depth)
-        /// #### To set mesasures go to Configuration → Shipping → Measures 
+        /// Set the height (depth)
+        /// To set mesasures go to Configuration → Shipping → Measures 
         /// </summary>
         public required decimal Height { get; init; }
 
         /// <summary>
-        /// ## Gtin
-        /// ### Set the Global Trade Item Number (GTIN). 
-        /// #### These identifiers include UPC (in North America), EAN (in Europe), JAN (in Japan), and ISBN (for books).
+        /// Set the Global Trade Item Number (GTIN). 
+        /// These identifiers include UPC (in North America), EAN (in Europe), JAN (in Japan), and ISBN (for books).
         /// *Default = null*
         /// </summary>
+        /// <remarks>
+        /// When created by ProductCreateMinimalDto (this DTO), Gtin is always set to null.
+        /// It is only used inside this replicator.
         public override string? Gtin { get; init; }
 
         [JsonIgnore]
