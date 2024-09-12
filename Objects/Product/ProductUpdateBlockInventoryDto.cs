@@ -1,7 +1,13 @@
-﻿namespace nopCommerceWebApiClient.Objects.Product
+﻿using nopCommerceWebApiClient.Interfaces;
+using System.Text.Json.Serialization;
+
+namespace nopCommerceWebApiClient.Objects.Product
 {
-    public record ProductUpdateBlockInventoryDto
+    public record ProductUpdateBlockInventoryDto : IDto
     {
+        [JsonIgnore]
+        public Type Type => typeof(ProductDto);
+
         /// <summary>
         /// ## ManageInventoryMethodId
         /// ### Set a value indicating how to manage inventory
