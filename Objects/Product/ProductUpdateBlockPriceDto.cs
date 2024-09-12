@@ -1,23 +1,29 @@
 ﻿
 
+using nopCommerceWebApiClient.Interfaces;
+using System.Text.Json.Serialization;
+
 namespace nopCommerceWebApiClient.Objects.Product
 {
-    public record ProductUpdateBlockPriceDto
+    public record ProductUpdateBlockPriceDto : IDto
     {
+        [JsonIgnore]
+        public Type Type => typeof(ProductDto);
+
         /// <summary>
         /// ## DisableBuyButton
         /// ### Set a value indicating whether to disable buy (Add to cart) button
         /// #### Check to disable the buy button for this product. This may be necessary for products that are 'available upon request'.
         /// *Default = false*
         /// </summary>
-        public virtual bool DisableBuyButton { get; init; }
+        public virtual bool DisableBuyButton { get; set; }
 
         /// <summary>
         /// ## DisableWishlistButton
         /// ### Set a value indicating whether to disable "Add to wishlist" button
         /// *Default = false*
         /// </summary>
-        public virtual bool DisableWishlistButton { get; init; }
+        public virtual bool DisableWishlistButton { get; set; }
 
         /// <summary>
         /// ## AvailableForPreOrder
@@ -25,7 +31,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### Check if this item is available for Pre-Order. It also displays "Pre-order" button instead of "Add to cart".
         /// *Default = false*
         /// </summary>
-        public virtual bool AvailableForPreOrder { get; init; }
+        public virtual bool AvailableForPreOrder { get; set; }
 
         /// <summary>
         /// ## PreOrderAvailabilityStartDateTimeUtc
@@ -35,7 +41,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### 'Pre-order' button will automatically be changed to 'Add to cart' at this moment.
         /// *Default = null*
         /// </summary>
-        public virtual DateTime? PreOrderAvailabilityStartDateTimeUtc { get; init; }
+        public virtual DateTime? PreOrderAvailabilityStartDateTimeUtc { get; set; }
 
         /// <summary>
         /// ## Price
@@ -43,7 +49,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### The price of the product. You can manage currency by selecting Configuration > Currencies.
         /// </summary>
         //[Required]
-        public decimal Price { get; init; }
+        public decimal Price { get; set; }
 
         /// <summary>
         /// ## OldPrice
@@ -53,7 +59,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### If is 0, old price will not show on product site
         /// *Defaul = 0*
         /// </summary>
-        public virtual decimal OldPrice { get; init; }
+        public virtual decimal OldPrice { get; set; }
 
         /// <summary>
         /// ## ProductCost
@@ -61,7 +67,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### Product cost is a prime product cost. This field is only for internal use, not visible for customers.
         /// *Default = 0m*
         /// </summary>
-        public virtual decimal ProductCost { get; init; }
+        public virtual decimal ProductCost { get; set; }
 
         /// <summary>
         /// ## CallForPrice
@@ -69,7 +75,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### Check to show "Call for Pricing" or "Call for quote" instead of price.
         /// *4Default = false*
         /// </summary>
-        public virtual bool CallForPrice { get; init; }
+        public virtual bool CallForPrice { get; set; }
 
         /// <summary>
         /// ## CustomerEntersPrice
@@ -77,7 +83,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### An option indicating whether customer should enter price.
         /// *Default = false*
         /// </summary>
-        public virtual bool CustomerEntersPrice { get; init; }
+        public virtual bool CustomerEntersPrice { get; set; }
 
         /// <summary>
         /// ## MinimumCustomerEnteredPrice
@@ -85,7 +91,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### Only if CallForPrice is enabled.
         /// *Defaul = 0*
         /// </summary>
-        public virtual decimal MinimumCustomerEnteredPrice { get; init; }
+        public virtual decimal MinimumCustomerEnteredPrice { get; set; }
 
         /// <summary>
         /// ## MaximumCustomerEnteredPrice
@@ -93,7 +99,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### Only if CallForPrice is enabled.
         /// *Defaul = 0*
         /// </summary>
-        public virtual decimal MaximumCustomerEnteredPrice { get; init; }
+        public virtual decimal MaximumCustomerEnteredPrice { get; set; }
 
         /// <summary>
         /// ## BasepriceEnabled
@@ -102,7 +108,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### If you sell 500ml of beer for 1,50 euro, then you have to display baseprice: 3.00 euro per 1L.
         /// *Default = false*
         /// </summary>
-        public virtual bool BasepriceEnabled { get; init; }
+        public virtual bool BasepriceEnabled { get; set; }
 
         /// <summary>
         /// ## BasepriceAmount
@@ -111,7 +117,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### Used by German users.
         /// *default = 0m*
         /// </summary>
-        public virtual decimal BasepriceAmount { get; init; }
+        public virtual decimal BasepriceAmount { get; set; }
 
         /// <summary>
         /// ## Set a unit of product for PAngV (MeasureWeight entity)
@@ -119,7 +125,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### Used by German users.
         /// *Default = 3*
         /// </summary>
-        public virtual int BasepriceUnitId { get; init; }
+        public virtual int BasepriceUnitId { get; set; }
 
         /// <summary>
         /// ## BasepriceBaseAmount
@@ -128,7 +134,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### Used by German users.
         /// default is 0m.
         /// </summary>
-        public virtual decimal BasepriceBaseAmount { get; init; }
+        public virtual decimal BasepriceBaseAmount { get; set; }
 
         /// <summary>
         /// ## BasepriceBaseUnitId
@@ -137,7 +143,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### Used by German users.
         /// *default = 3*
         /// </summary>
-        public virtual int BasepriceBaseUnitId { get; init; }
+        public virtual int BasepriceBaseUnitId { get; set; }
 
         /// <summary>
         /// ## IsTaxExempt
@@ -145,7 +151,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### Determines whether this product is tax exempt (tax will not be applied to this product at checkout).
         /// *Default = false*
         /// </summary>
-        public virtual bool IsTaxExempt { get; init; }
+        public virtual bool IsTaxExempt { get; set; }
 
         /// <summary>
         /// ## TaxCategoryId
@@ -153,7 +159,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### Look on TaxCategory schema for more details.
         /// </summary>
         //[Required]
-        public int TaxCategoryId { get; init; }
+        public int TaxCategoryId { get; set; }
 
         /// <summary>
         /// ## HasDiscountsApplied
@@ -163,7 +169,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### if this property is set to false, then we do not need to load Applied Discounts navigation property
         /// *4Default = false*
         /// </summary>
-        public virtual bool HasDiscountsApplied { get; init; }
+        public virtual bool HasDiscountsApplied { get; set; }
 
         /// <summary>
         /// ## HasTierPrices
@@ -173,6 +179,13 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### if this property is set to false, then we do not need to load tier prices navigation property
         /// *Default = true*
         /// </summary>
-        public virtual bool HasTierPrices { get; init; }
+        public virtual bool HasTierPrices { get; set; }
+
+        [JsonIgnore]
+        /// <summary>
+        /// Virtual field used to read the correct category from the nopCommerce database.  
+        /// This value is set by external service data.
+        /// </summary>
+        public decimal? VatValue { get; init; }
     }
 }
