@@ -75,5 +75,11 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// This value is set by external service data.
         /// </summary>
         public decimal? VatValue { get; init; }
+
+        [JsonIgnore]
+        /// <summary>
+        /// Virtual field used to read the correct price, etc from subiekt gt.  
+        /// </summary>
+        public int? SubiektGtId { get; init; }
     }
 }
