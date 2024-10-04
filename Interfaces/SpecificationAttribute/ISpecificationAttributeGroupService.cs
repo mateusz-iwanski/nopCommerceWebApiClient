@@ -6,7 +6,7 @@ namespace nopCommerceWebApiClient.Interfaces.SpecificationAttribute
     public interface ISpecificationAttributeGroupService
     {
         [Post("/api/specification-attribute/group")]
-        Task<SpecificationAttributeGroupDto> CreateAsync(SpecificationAttributeGroupCreateDto specificationAttributeGroupCreateDto);
+        Task<HttpResponseMessage> CreateAsync(SpecificationAttributeGroupCreateDto specificationAttributeGroupCreateDto);
 
         [Delete("/api/specification-attribute/group/{id}")]
         Task<HttpResponseMessage> DeleteAsync([AliasAs("id")] int id);
