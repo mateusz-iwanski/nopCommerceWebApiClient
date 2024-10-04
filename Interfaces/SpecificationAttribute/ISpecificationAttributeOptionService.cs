@@ -7,10 +7,10 @@ namespace nopCommerceWebApiClient.Interfaces.SpecificationAttribute
     public interface ISpecificationAttributeOptionService
     {
         [Post("/api/specification-attribute/option")]
-        Task<SpecificationAttributeOptionDto> CreateAsync(SpecificationAttributeOptionCreateDto specificationAttributeOptionCreateDto);
+        Task<HttpResponseMessage> CreateAsync(SpecificationAttributeOptionCreateDto specificationAttributeOptionCreateDto);
 
         [Delete("/api/specification-attribute/option/{id}")]
-        Task DeleteAsync([AliasAs("id")] int id);
+        Task<HttpResponseMessage> DeleteAsync([AliasAs("id")] int id);
 
         [Get("/api/specification-attribute/option")]
         Task<List<SpecificationAttributeOptionDto>> GetAllAsync();
@@ -22,6 +22,6 @@ namespace nopCommerceWebApiClient.Interfaces.SpecificationAttribute
         Task<SpecificationAttributeOptionDto> GetByIdAsync([AliasAs("id")] int id);
 
         [Put("/api/specification-attribute/option")]
-        Task<SpecificationAttributeOptionDto> UpdateAsync(SpecificationAttributeOptionUpdateDto specificationAttributeOptionUpdateDto);
+        Task<HttpResponseMessage> UpdateAsync(SpecificationAttributeOptionUpdateDto specificationAttributeOptionUpdateDto);
     }
 }
