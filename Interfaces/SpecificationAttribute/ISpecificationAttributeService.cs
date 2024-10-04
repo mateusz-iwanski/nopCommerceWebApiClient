@@ -7,7 +7,7 @@ namespace nopCommerceWebApiClient.Interfaces.SpecificationAttribute
     public interface ISpecificationAttributeService
     {
         [Post("/api/specification-attribute")]
-        Task<SpecificationAttributeDto> CreateAsync(SpecificationAttributeCreateDto specificationAttributeCreateDto);
+        Task<HttpResponseMessage> CreateAsync(SpecificationAttributeCreateDto specificationAttributeCreateDto);
 
         [Get("/api/specification-attribute")]
         Task<IEnumerable<SpecificationAttributeDto>> GetAllAsync();
