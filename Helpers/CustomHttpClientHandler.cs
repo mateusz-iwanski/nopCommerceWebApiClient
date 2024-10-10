@@ -39,12 +39,11 @@ namespace nopCommerceWebApiClient.Helpers
                 _logger.Info($"{processId} Request method: {request.Method}");
                 _logger.Info($"{processId} Response status code: {response.StatusCode}");
 
-                try
-                {
+                if (request.Content != null)
+                { 
                     var requestContent = await request.Content.ReadAsStringAsync();
                     if (requestContent != null) _logger.Info($"{processId} Request payload: {requestContent}");
                 }
-                catch { }
 
                 if (!response.IsSuccessStatusCode)
                 {
@@ -63,7 +62,7 @@ namespace nopCommerceWebApiClient.Helpers
                             {
                                 foreach (var error in errorContent.Errors)
                                 {
-                                    _logger.Error($"{processId} {error.Key}: {string.Join(", ", error.Value)}");
+                                    _logger.Error($"{processId} Response validation: {string.Join(", ", error.Value)}");
                                 }
                             }
                             else
