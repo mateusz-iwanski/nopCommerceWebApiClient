@@ -8,7 +8,7 @@ namespace nopCommerceWebApiClient.Objects.Product
     /// <remarks>
     /// Only the required properties are included in this DTO
     /// </remarks>
-    public record ProductCreateMinimalDto : ProductCreateDefault
+    public class ProductCreateMinimalDto : //ProductCreateDefault
     {
         /// <summary>
         /// Set the name
@@ -67,7 +67,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// <remarks>
         /// When created by ProductCreateMinimalDto (this DTO), Gtin is always set to null.
         /// It is only used inside this replicator.
-        public override string? Gtin { get; init; }
+        public required string? Gtin { get; init; }
 
         [JsonIgnore]
         /// <summary>
