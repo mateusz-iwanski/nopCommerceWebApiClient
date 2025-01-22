@@ -9,7 +9,7 @@ namespace nopCommerceWebApiClient.Objects.Product
     /// <remarks>
     /// This class is used for inheritance for dto to create a product.
     /// </remarks>
-    public record ProductCreateDefault
+    public class ProductCreateDefault
     {
         #region Product information
 
@@ -862,7 +862,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### if this property is set to false, then we do not need to load Applied Discounts navigation property
         /// *4Default = false*
         /// </summary>
-        public virtual bool HasDiscountsApplied { get; init; } = false;
+        // public virtual bool HasDiscountsApplied { get; init; } = false; Thies fields is not available in nopCommerce 4.8
 
         /// <summary>
         /// ## HasTierPrices
@@ -872,7 +872,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// #### if this property is set to false, then we do not need to load tier prices navigation property
         /// *Default = true*
         /// </summary>
-        public virtual bool HasTierPrices { get; init; } = true;
+        // public virtual bool HasTierPrices { get; init; } = true; 
 
         #endregion
 
