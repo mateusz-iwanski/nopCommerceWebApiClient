@@ -8,7 +8,7 @@ namespace nopCommerceWebApiClient.Objects.Product
     /// <remarks>
     /// Only the required properties are included in this DTO
     /// </remarks>
-    public class ProductCreateMinimalDto : //ProductCreateDefault
+    public record ProductCreateMinimalDto //: ProductCreateDefault
     {
         /// <summary>
         /// Set the name
