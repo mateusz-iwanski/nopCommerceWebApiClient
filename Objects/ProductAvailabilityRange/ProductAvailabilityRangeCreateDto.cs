@@ -20,6 +20,6 @@ namespace nopCommerceWebApiClient.Objects.ProductAvailabilityRange
         /// <summary>
         /// Set the display order
         /// </summary>
-        public new int DisplayOrder { get; }
+        //public new int DisplayOrder { get; }
     }
 }
