@@ -1,4 +1,5 @@
-﻿using nopCommerceWebApiClient.Objects.Category;
+﻿using Microsoft.AspNetCore.Mvc;
+using nopCommerceWebApiClient.Objects.Category;
 
 using Refit;
 
@@ -6,8 +7,8 @@ namespace nopCommerceWebApiClient.Interfaces.Category
 {
     public interface ICategoryService
     {
-        [Post("/api/category")]
-        Task<HttpResponseMessage> CreateAsync(CategoryCreateDto createCategoryDto);
+        [Post("/api/category/create")]
+        Task<HttpResponseMessage> CreateAsync([FromBody] CategoryCreateDto createCategoryDto);
 
         [Delete("/api/category/{id}")]
         Task<HttpResponseMessage> DeleteAsync([AliasAs("id")] int id);
