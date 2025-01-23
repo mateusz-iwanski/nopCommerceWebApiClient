@@ -211,5 +211,7 @@ namespace nopCommerceWebApiClient.Objects.Category
         /// *Default = Datetime.Now (when update)*
         /// </summary>
         public virtual DateTime UpdatedOnUtc { get; }
+
+        public virtual bool RestrictFromVendors { get; init; }
     }
 }
