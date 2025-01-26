@@ -15,6 +15,7 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// * DontManageStock (0): Do not track inventory for the product. (default setting)
         /// * ManageStock (1): Track inventory for the product.
         /// * ManageStockByAttributes (2): Track inventory for the product by product attributes.
+        /// * Default = 1*
         /// </summary>
         public virtual int ManageInventoryMethodId { get; init; }
 
