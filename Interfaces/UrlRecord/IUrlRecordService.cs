@@ -6,7 +6,7 @@ namespace nopCommerceWebApiClient.Interfaces.UrlRecord
     public interface IUrlRecordService
     {
         [Post("/api/url-records")]
-        Task<UrlRecordDto> CreateAsync(UrlRecordCreateDto urlRecordCreateDto);
+        Task<HttpResponseMessage> CreateAsync(UrlRecordCreateDto urlRecordCreateDto);
 
         [Delete("/api/url-records/{id}")]
         Task<HttpResponseMessage> DeleteAsync([AliasAs("id")] int id);
@@ -15,9 +15,9 @@ namespace nopCommerceWebApiClient.Interfaces.UrlRecord
         Task<IEnumerable<UrlRecordDto>> GetAllAsync();
 
         [Get("/api/url-records/{id}")]
-        Task<UrlRecordDto> GetByIdAsync([AliasAs("id")] int id);
+        Task<HttpResponseMessage> GetByIdAsync([AliasAs("id")] int id);
 
-        [Put("/api/url-records")]
+        [Put("/api/url-records/")]
         Task<HttpResponseMessage> UpdateAsync(UrlRecordUpdateDto urlRecordUpdateDto);
     }
 }
