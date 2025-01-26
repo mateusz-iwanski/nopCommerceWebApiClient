@@ -51,6 +51,7 @@ using nopCommerceWebApiClient.Interfaces.UrlRecord;
 using nopCommerceWebApiClient.Objects.UrlRecord;
 using nopCommerceWebApiClient.Interfaces.Video;
 using nopCommerceWebApiClient.Objects.Video;
+using nopCommerceWebApiClient.Objects.Product;
 
 
 namespace nopCommerceWebApiClient
@@ -170,6 +171,7 @@ namespace nopCommerceWebApiClient
             //{
             //    Console.WriteLine(role);
             //}
+
 
             var language = RestService.For<ILanguageService>(httpClient);
 
@@ -722,6 +724,8 @@ namespace nopCommerceWebApiClient
 
             //Console.WriteLine(await ivideoService.GetByUrlAsync("string2.com"));
 
+
+
             Console.WriteLine("Start");
             var taxApi = RestService.For<ITaxCategoryService>(httpClient);
             //var a = await taxApi.GetByName("PL_8_procent_podstawowa");
@@ -732,7 +736,15 @@ namespace nopCommerceWebApiClient
             {
                 Console.WriteLine(b);
             }
-            
+
+
+
+
+            // dodac
+            // ProductUpdateBlockInformationDto
+            // ProductUpdateBlockInventoryDto
+            // sprawdzic jeszcze czego nie ma
+
         }
     }
 }
