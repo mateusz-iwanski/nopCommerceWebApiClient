@@ -18,7 +18,7 @@ namespace nopCommerceWebApiClient.Interfaces.SpecificationAttribute
         Task<SpecificationAttributeGroupDto> GetByIdAsync([AliasAs("id")] int id);
 
         [Get("/api/specification-attribute/group/name/{name}")]
-        Task<SpecificationAttributeGroupDto> GetByNameAsync(string name);
+        Task<HttpResponseMessage> GetByNameAsync(string name);
 
         [Put("/api/specification-attribute/group")]
         Task<HttpResponseMessage> UpdateAsync(SpecificationAttributeGroupUpdateDto specificationAttributeGroupUpdateDto);
