@@ -38,6 +38,7 @@ namespace nopCommerceWebApiClient
         ILanguageService LanguageService { get; }
         IManufacturerService ManufacturerService { get; }
         IPictureService PictureService { get; }
+        IPictureBinaryService PictureBinaryService { get; }
         IProductService ProductService { get; }
         IProductAttributeService ProductAttributeService { get; }
         IProductAttributeValueService ProductAttributeValueService { get; }
@@ -71,6 +72,7 @@ namespace nopCommerceWebApiClient
         public ILanguageService LanguageService { get; private set; }
         public IManufacturerService ManufacturerService { get; private set; }
         public IPictureService PictureService { get; private set; }
+        public IPictureBinaryService PictureBinaryService { get; private set; }
         public IProductService ProductService { get; private set; }
         public IProductAttributeService ProductAttributeService { get; private set; }
         public IProductAttributeValueService ProductAttributeValueService { get; private set; }
@@ -103,6 +105,7 @@ namespace nopCommerceWebApiClient
             LanguageService = RestService.For<ILanguageService>(httpClient);
             ManufacturerService = RestService.For<IManufacturerService>(httpClient);
             PictureService = RestService.For<IPictureService>(httpClient);
+            PictureBinaryService = RestService.For<IPictureBinaryService>(httpClient);
             ProductService = RestService.For<IProductService>(httpClient);
             ProductAttributeService = RestService.For<IProductAttributeService>(httpClient);
             ProductAttributeValueService = RestService.For<IProductAttributeValueService>(httpClient);
