@@ -162,6 +162,6 @@ namespace nopCommerceWebApiClient.Objects.Product
         /// For example - if you type "10,20,30" then the customer will only be able to select one of those quantities.
         /// Default it's set to null.
         /// </summary>
-        public virtual string? AllowedQuantities { get; init; }
+        public virtual string? AllowedQuantities { get; set; }
     }
 }
